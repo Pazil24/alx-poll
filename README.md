@@ -1,4 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ALX Polly - Interactive Polling Application
+
+ALX Polly is a modern, interactive polling application built with Next.js, where users can create polls, vote on existing polls, and share results with others.
+
+![ALX Polly Dashboard](https://example.com/screenshot.png)
+
+## Features
+
+- **User Authentication**: Sign up, login, and manage your account
+- **Create Custom Polls**: Create polls with multiple options and customizable settings
+- **Vote on Polls**: Participate in polls created by you or other users
+- **Poll Management**: Edit, delete, or archive your created polls
+- **Poll Sharing**: Share polls via direct links or social media
+- **Responsive Design**: Works seamlessly across desktop and mobile devices
+
+## Project Structure
+
+```
+app/
+├── auth/            # Authentication pages (login, register)
+├── polls/           # Main polls dashboard and listing
+│   ├── [id]/        # Individual poll view and voting interface
+│   └── new/         # Poll creation interface
+├── components/      # Shared UI components
+│   └── ui/          # Shadcn UI components
+└── page.tsx         # Root redirect to polls dashboard
+```
+
+## Technology Stack
+
+- **Frontend**: Next.js 14, React, TypeScript, Tailwind CSS
+- **UI Components**: Shadcn UI
+- **Styling**: Tailwind CSS
+- **Fonts**: Geist font family
 
 ## Getting Started
 
@@ -14,23 +47,66 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the application.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## User Flows
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Authentication
 
-## Learn More
+- Users can sign up with email/password
+- Existing users can log in to their accounts
+- Password recovery is available via email
 
-To learn more about Next.js, take a look at the following resources:
+### Creating Polls
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Navigate to "Create Poll" button in the header
+2. Fill in the poll title and question
+3. Add at least two poll options (more can be added with "Add Option")
+4. Configure poll settings (optional):
+   - Allow multiple selections
+   - Require users to be logged in
+   - Set poll end date
+5. Create the poll
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Voting on Polls
 
-## Deploy on Vercel
+1. Browse available polls from the dashboard
+2. Click on a poll to view details
+3. Select an option and submit your vote
+4. View current poll results
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Sharing Polls
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Copy direct link to poll
+- Share via social media
+
+## Development
+
+### Adding New Components
+
+The project uses Shadcn UI components. To add a new component:
+
+```bash
+npx shadcn@latest add [component-name]
+```
+
+### Future Roadmap
+
+- Poll analytics and insights
+- Custom themes for polls
+- Advanced poll types (ranking, scoring, etc.)
+- Mobile application
+- API for third-party integrations
+
+## Deployment
+
+The recommended deployment platform is Vercel:
+
+1. Push your code to a GitHub repository
+2. Import the project to [Vercel](https://vercel.com)
+3. Configure any environment variables
+4. Deploy!
+
+## License
+
+MIT © ALX Polly Team
